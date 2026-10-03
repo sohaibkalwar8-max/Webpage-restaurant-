@@ -1,0 +1,1039 @@
+
+/* ==================================
+   1. GLOBAL
+================================== */
+
+:root {
+    --green: #292f20;
+    --green-light: #414a32;
+    --cream: #f7f5ed;
+    --paper: #eeece1;
+    --orange: #c97845;
+    --text: #282a23;
+    --muted: #77796f;
+    --border: #deddd2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 4px;
+}
+
+::selection {
+    background: var(--green);
+    color: white;
+}
+
+
+/* ==================================
+   2. NAVIGATION
+================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 84px;
+    padding: 14px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    background: rgba(247, 245, 237, 0.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+
+    font-family: Georgia, serif;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.15;
+}
+
+.logo > span {
+    display: inline;
+    color: var(--orange);
+}
+
+.logo small {
+    margin-top: 5px;
+    color: var(--muted);
+
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links > a {
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.25s;
+}
+
+.nav-links > a:hover {
+    color: var(--orange);
+}
+
+.nav-links .nav-cta {
+    padding: 12px 17px;
+    color: white;
+    background: var(--green);
+}
+
+.nav-cta:hover {
+    background: var(--green-light);
+}
+
+.menu-toggle {
+    display: none;
+
+    padding: 5px;
+    border: none;
+    background: none;
+
+    color: var(--green);
+    font-size: 25px;
+}
+
+
+/* ==================================
+   3. HERO
+================================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    align-items: center;
+    gap: 55px;
+
+    padding: 70px 7% 80px;
+}
+
+.hero-content {
+    padding: 15px 0;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.eyebrow > span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--orange);
+}
+
+.hero h1 {
+    margin: 28px 0 22px;
+
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 5.6vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -2.5px;
+}
+
+.hero h1 em,
+.section h2 em,
+.experience h2 em {
+    color: var(--orange);
+    font-weight: normal;
+}
+
+.hero-description {
+    max-width: 420px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    margin-top: 30px;
+}
+
+.button {
+    min-height: 48px;
+    padding: 0 19px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    border: 1px solid transparent;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition:
+        transform 0.25s,
+        background 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-primary {
+    background: var(--green);
+    color: white;
+}
+
+.button-primary:hover {
+    background: var(--green-light);
+}
+
+.text-link {
+    padding-bottom: 4px;
+    border-bottom: 1px solid #c8c5b8;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    color: var(--orange);
+}
+
+.hero-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    margin-top: 48px;
+    padding-top: 23px;
+
+    border-top: 1px solid var(--border);
+}
+
+.hero-details > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hero-details strong {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.hero-details span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+
+/* Hero image */
+
+.hero-visual {
+    position: relative;
+    min-width: 0;
+    height: 490px;
+}
+
+.hero-visual > img {
+    border-radius: 48% 48% 3px 3px;
+    object-position: center;
+}
+
+.image-caption {
+    position: absolute;
+    right: -18px;
+    bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    max-width: 250px;
+    padding: 16px 19px;
+
+    background: white;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
+}
+
+.caption-dot {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--orange);
+}
+
+.image-caption strong,
+.image-caption small {
+    display: block;
+}
+
+.image-caption strong {
+    font-size: 11px;
+}
+
+.image-caption small {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.hero-stamp {
+    position: absolute;
+    top: 24px;
+    left: -22px;
+
+    width: 75px;
+    height: 75px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background: var(--green);
+
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.hero-stamp b {
+    margin: 2px 0;
+    color: #d9a66d;
+    font-size: 17px;
+}
+
+
+/* ==================================
+   4. HIGHLIGHTS STRIP
+================================== */
+
+.highlights {
+    min-height: 70px;
+    padding: 20px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    background: var(--green);
+    color: #f7f5ed;
+}
+
+.highlights div {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.highlights > span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #d9a66d;
+}
+
+
+/* ==================================
+   5. SHARED SECTIONS
+================================== */
+
+.section {
+    padding: 105px 7%;
+}
+
+.section h2 {
+    margin-top: 15px;
+
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 4.5vw, 53px);
+    line-height: 1.14;
+    letter-spacing: -1.2px;
+}
+
+
+/* ==================================
+   6. ABOUT
+================================== */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    align-items: center;
+    gap: 85px;
+}
+
+.about-image {
+    position: relative;
+    height: 450px;
+}
+
+.about-image img {
+    object-position: center;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+
+    padding: 11px 14px;
+
+    color: white;
+    background: var(--green);
+
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.about-content > p:not(.section-label) {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.dark-link {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+
+/* ==================================
+   7. MENU SECTION
+================================== */
+
+.menu-section {
+    background: var(--paper);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 35px;
+}
+
+.heading-description {
+    max-width: 330px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.menu-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin: 38px 0 30px;
+}
+
+.filter-btn {
+    padding: 10px 16px;
+
+    border: 1px solid #d8d6ca;
+    background: transparent;
+    color: var(--text);
+
+    font-size: 11px;
+
+    transition: 0.25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    border-color: var(--green);
+    background: var(--green);
+    color: white;
+}
+
+
+/* Food cards */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px 20px;
+}
+
+.food-card {
+    min-width: 0;
+    background: var(--cream);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(41, 47, 32, 0.08);
+}
+
+.food-card[hidden] {
+    display: none;
+}
+
+.food-image {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    background: #dedbd0;
+}
+
+.food-image img {
+    transition: transform 0.5s;
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.06);
+}
+
+.food-tag {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+
+    padding: 7px 10px;
+
+    background: var(--cream);
+    color: var(--green);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.food-info {
+    padding: 21px 18px 23px;
+}
+
+.food-title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.food-title h3 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.price {
+    padding-top: 4px;
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.food-info > p {
+    min-height: 42px;
+    margin-top: 9px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.food-category {
+    display: inline-block;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+
+    color: #77796f;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+.menu-note {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* ==================================
+   8. EXPERIENCE BANNER
+================================== */
+
+.experience {
+    position: relative;
+    min-height: 440px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background: var(--green);
+    color: white;
+}
+
+.experience > img {
+    position: absolute;
+    inset: 0;
+    opacity: 0.33;
+}
+
+.experience-overlay {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 70px 10%;
+}
+
+.experience h2 {
+    margin: 20px 0 28px;
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5.5vw, 65px);
+    line-height: 1.1;
+}
+
+.experience h2 em {
+    color: #e4b78b;
+}
+
+.button-light {
+    background: var(--cream);
+    color: var(--green);
+}
+
+
+/* ==================================
+   9. CONTACT
+================================== */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    gap: 75px;
+}
+
+.contact-intro > p:not(.section-label) {
+    max-width: 330px;
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 19px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-icon {
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--border);
+    color: var(--orange);
+    font-size: 18px;
+}
+
+.detail-block h3 {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.detail-block p {
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.detail-block small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.contact-button {
+    align-self: flex-start;
+    margin-top: 25px;
+}
+
+
+/* ==================================
+   10. FOOTER
+================================== */
+
+.footer {
+    padding: 30px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    background: var(--green);
+    color: white;
+}
+
+.footer-logo {
+    font-size: 21px;
+}
+
+.footer-logo small {
+    display: none;
+}
+
+.footer > p {
+    color: #d0d2c6;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.back-top {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.footer > small {
+    width: 100%;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+
+    color: #c4c8b9;
+    font-size: 10px;
+}
+
+
+/* ==================================
+   11. TABLET
+================================== */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+        gap: 35px;
+    }
+
+    .hero-visual {
+        height: 420px;
+    }
+
+    .section {
+        padding: 85px 5%;
+    }
+
+    .about-section {
+        gap: 45px;
+    }
+
+    .food-image {
+        height: 190px;
+    }
+
+    .menu-grid {
+        gap: 20px 15px;
+    }
+}
+
+
+/* ==================================
+   12. MOBILE NAVIGATION
+================================== */
+
+@media (max-width: 760px) {
+
+    .navbar {
+        min-height: 72px;
+        padding: 12px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 12px 20px 20px;
+
+        background: var(--cream);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links > a {
+        padding: 13px 5px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links .nav-cta {
+        margin-top: 12px;
+        padding: 13px;
+        text-align: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 20px 65px;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: clamp(46px, 10vw, 65px);
+    }
+
+    .hero-visual {
+        height: min(110vw, 430px);
+        max-height: 430px;
+        margin: 0 12px;
+    }
+
+    .image-caption {
+        right: -10px;
+    }
+
+    .hero-stamp {
+        left: -12px;
+    }
+
+    .hero-details {
+        gap: 17px;
+    }
+
+    .highlights {
+        justify-content: center;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .highlights > span {
+        display: none;
+    }
+
+    .highlights div {
+        font-size: 8px;
+    }
+
+    .about-section,
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image {
+        height: 360px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .heading-description {
+        max-width: 450px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .food-image {
+        height: 210px;
+    }
+
+    .experience {
+        min-height: 370px;
+    }
+
+    .experience-overlay {
+        padding: 55px 7%;
+    }
+}
+
+
+/* ==================================
+   13. SMALL PHONES
+================================== */
+
+@media (max-width: 460px) {
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .hero-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-details > div:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .highlights {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section {
+        padding: 65px 20px;
+    }
+
+    .about-image {
+        height: 300px;
+    }
+
+    .menu-filters {
+        gap: 7px;
+    }
+
+    .filter-btn {
+        padding: 9px 11px;
+        font-size: 10px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-image {
+        height: 250px;
+    }
+
+    .food-info {
+        padding: 20px;
+    }
+
+    .food-info > p {
+        min-height: auto;
+    }
+
+    .experience {
+        min-height: 340px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer > small {
+        line-height: 1.8;
+    }
+}
+
+
+/* ==================================
+   14. REDUCED MOTION
+================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171a13">
+    <meta name="description" content="Discover handcrafted food, fresh ingredients and a memorable dining experience at Olive & Ember.">
+
+    <title>Olive & Ember | Restaurant</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="logo">
+            olive<span>&</span>ember
+            <small>RESTAURANT & KITCHEN</small>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+            aria-label="Open navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">Our Story</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+            <a href="#menu" class="nav-cta">Explore Menu ↗</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span></span> FRESH INGREDIENTS · MADE WITH CARE
+                </div>
+
+                <h1>
+                    Good food.<br>
+                    <em>Good moments.</em>
+                </h1>
+
+                <p class="hero-description">
+                    Thoughtfully prepared dishes, fresh ingredients
+                    and a welcoming space to enjoy every bite.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#menu" class="button button-primary">
+                        Explore Our Menu <span>↗</span>
+                    </a>
+
+                    <a href="#about" class="text-link">
+                        Discover our story →
+                    </a>
+                </div>
+
+                <div class="hero-details">
+                    <div>
+                        <strong>FRESH</strong>
+                        <span>Every day</span>
+                    </div>
+                    <div>
+                        <strong>MADE WITH CARE</strong>
+                        <span>Quality ingredients</span>
+                    </div>
+                    <div>
+                        <strong>GOOD FOOD</strong>
+                        <span>Good company</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+                <img
+                    src="food1.jpg"
+                    alt="Freshly prepared restaurant signature dish"
+                    fetchpriority="high"
+                >
+
+                <div class="image-caption">
+                    <span class="caption-dot"></span>
+                    <div>
+                        <strong>Made fresh, served with care.</strong>
+                        <small>Our approach to every plate</small>
+                    </div>
+                </div>
+
+                <div class="hero-stamp">
+                    <span>FRESH</span>
+                    <b>✳</b>
+                    <span>DAILY</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Highlights -->
+        <section class="highlights">
+            <div>✳ &nbsp; FRESHLY PREPARED</div>
+            <span></span>
+            <div>✳ &nbsp; QUALITY INGREDIENTS</div>
+            <span></span>
+            <div>✳ &nbsp; MADE TO BE ENJOYED</div>
+        </section>
+
+
+        <!-- About -->
+        <section class="section about-section" id="about">
+
+            <div class="about-image">
+                <img
+                    src="food2.jpg"
+                    alt="A carefully prepared meal"
+                    loading="lazy"
+                >
+                <div class="image-label">A LITTLE MORE FLAVOUR</div>
+            </div>
+
+            <div class="about-content">
+                <p class="section-label">OUR STORY</p>
+
+                <h2>
+                    Simple ingredients.<br>
+                    <em>Memorable meals.</em>
+                </h2>
+
+                <p>
+                    At Olive & Ember, we believe good food brings
+                    people together. Our approach is simple: focus
+                    on flavour, care about the details and make
+                    every meal feel special.
+                </p>
+
+                <p>
+                    From satisfying main courses to something sweet
+                    at the end, our menu is designed for everyday
+                    cravings and moments worth sharing.
+                </p>
+
+                <a href="#menu" class="text-link dark-link">
+                    Get to know our menu →
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- Menu -->
+        <section class="section menu-section" id="menu">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">A TASTE OF OUR KITCHEN</p>
+                    <h2>Made to be <em>enjoyed.</em></h2>
+                </div>
+
+                <p class="heading-description">
+                    Explore a selection of signature dishes
+                    made for every kind of craving.
+                </p>
+            </div>
+
+            <!-- Menu Filters -->
+            <div class="menu-filters" aria-label="Filter menu">
+                <button class="filter-btn active"
+                    data-filter="all" aria-pressed="true">All Items</button>
+
+                <button class="filter-btn"
+                    data-filter="starters" aria-pressed="false">Starters</button>
+
+                <button class="filter-btn"
+                    data-filter="mains" aria-pressed="false">Main Course</button>
+
+                <button class="filter-btn"
+                    data-filter="desserts" aria-pressed="false">Desserts</button>
+            </div>
+
+            <div class="menu-grid">
+
+                <!-- Food 1 -->
+                <article class="food-card" data-category="mains">
+                    <div class="food-image">
+                        <img src="food01.jpg"
+                            alt="Signature grilled dish" loading="lazy">
+                        <span class="food-tag">SIGNATURE</span>
+                    </div>
+
+                    <div class="food-info">
+                        <div class="food-title">
+                            <h3>Signature Grill</h3>
+                            <span class="price">Rs. 850</span>
+                        </div>
+                        <p>A flavourful grilled favourite with fresh herbs.</p>
+                        <span class="food-category">MAIN COURSE</span>
+                    </div>
+                </article>
+
+                <!-- Food 2 -->
+                <article class="food-card" data-category="starters">
+                    <div class="food-image">
+                        <img src="food2.jpg"
+                            alt="Fresh starter plate" loading="lazy">
+                    </div>
+
+                    <div class="food-info">
+                        <div class="food-title">
+                            <h3>Garden Starter</h3>
+                            <span class="price">Rs. 450</span>
+                        </div>
+                        <p>A fresh, light start with a delicious dressing.</p>
+                        <span class="food-category">STARTERS</span>
+                    </div>
+                </article>
+
+                <!-- Food 3 -->
+                <article class="food-card" data-category="mains">
+                    <div class="food-image">
+                        <img src="food3.jpg"
+                            alt="Restaurant burger with side" loading="lazy">
+                        <span class="food-tag">POPULAR</span>
+                    </div>
+
+                    <div class="food-info">
+                        <div class="food-title">
+                            <h3>Classic Burger</h3>
+                            <span class="price">Rs. 650</span>
+                        </div>
+                        <p>A satisfying burger with a crisp, fresh side.</p>
+                        <span class="food-category">MAIN COURSE</span>
+                    </div>
+                </article>
+
+                <!-- Food 4 -->
+                <article class="food-card" data-category="mains">
+                    <div class="food-image">
+                        <img src="food4.jpg"
+                            alt="Freshly served pasta" loading="lazy">
+                    </div>
+
+                    <div class="food-info">
+                        <div class="food-title">
+                            <h3>Creamy Pasta</h3>
+                            <span class="price">Rs. 750</span>
+                        </div>
+                        <p>Tender pasta finished with a rich, creamy sauce.</p>
+                        <span class="food-category">MAIN COURSE</span>
+                    </div>
+                </article>
+
+                <!-- Food 5 -->
+                <article class="food-card" data-category="starters">
+                    <div class="food-image">
+                        <img src="food5.jpg"
+                            alt="Crispy appetiser" loading="lazy">
+                    </div>
+
+                    <div class="food-info">
+                        <div class="food-title">
+                            <h3>Crispy Bites</h3>
+                            <span class="price">Rs. 400</span>
+                        </div>
+                        <p>Golden, crunchy bites served with a dipping sauce.</p>
+                        <span class="food-category">STARTERS</span>
+                    </div>
+                </article>
+
+                <!-- Food 6 -->
+                <article class="food-card" data-category="desserts">
+                    <div class="food-image">
+                        <img src="food6.jpg"
+                            alt="Sweet dessert served on a plate" loading="lazy">
+                        <span class="food-tag">SWEET FINISH</span>
+                    </div>
+
+                    <div class="food-info">
+                        <div class="food-title">
+                            <h3>House Dessert</h3>
+                            <span class="price">Rs. 350</span>
+                        </div>
+                        <p>A sweet little finish to round off your meal.</p>
+                        <span class="food-category">DESSERTS</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="menu-note">
+                Sample menu for this portfolio demonstration.
+                Dish names and prices can be customised.
+            </p>
+
+        </section>
+
+
+        <!-- Experience Banner -->
+        <section class="experience">
+            <img src="images/food3.jpg"
+                alt="A dish prepared for sharing" loading="lazy">
+
+            <div class="experience-overlay">
+                <p class="section-label">GOOD FOOD, GOOD COMPANY</p>
+                <h2>Make room for<br><em>something delicious.</em></h2>
+                <a href="#contact" class="button button-light">
+                    Find Us & Get in Touch ↗
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Opening Hours and Contact -->
+        <section class="section contact-section" id="contact">
+
+            <div class="contact-intro">
+                <p class="section-label">COME SAY HELLO</p>
+                <h2>We'd love to<br><em>see you.</em></h2>
+                <p>
+                    Planning a meal or just exploring?
+                    Here are our sample contact details.
+                </p>
+            </div>
+
+            <div class="contact-details">
+
+                <div class="detail-block">
+                    <span class="detail-icon">⌖</span>
+                    <div>
+                        <h3>Find Us</h3>
+                        <p>Your Restaurant Address</p>
+                        <small>City, Pakistan</small>
+                    </div>
+                </div>
+
+                <div class="detail-block">
+                    <span class="detail-icon">◷</span>
+                    <div>
+                        <h3>Opening Hours</h3>
+                        <p>Monday – Sunday</p>
+                        <small>12:00 PM – 11:00 PM</small>
+                    </div>
+                </div>
+
+                <div class="detail-block">
+                    <span class="detail-icon">↗</span>
+                    <div>
+                        <h3>Get in Touch</h3>
+                        <p>+92 XXX XXXXXXX</p>
+                        <small>hello@example.com</small>
+                    </div>
+                </div>
+
+                <a href="mailto:hello@example.com"
+                    class="button button-primary contact-button">
+                    Send an Email ↗
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="#home" class="logo footer-logo">
+            olive<span>&</span>ember<b>.</b>
+        </a>
+
+        <p>Good food. Good moments.</p>
+
+        <a href="#home" class="back-top">BACK TO TOP ↑</a>
+
+        <small>© <span id="year"></span> Olive & Ember. Demo concept.</small>
+    </footer>
+
+</body>
+</html>
